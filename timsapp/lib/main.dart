@@ -1,10 +1,5 @@
-import 'dart:html';
 import 'dart:math';
 import 'package:flutter/material.dart';
-
-Color randomColor() {
-  return Colors.primaries[Random().nextInt(Colors.primaries.length)];
-}
 
 void main() {
   runApp(MyApp());
@@ -12,6 +7,10 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+
+  Color randomColor() {
+    return Colors.primaries[Random().nextInt(Colors.primaries.length)];
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +21,7 @@ class MyApp extends StatelessWidget {
         title: const Text('Flutter is Fun!'),
       ),
       body: ListView(
-          scrollDirection: Axis.horizontal,
+          scrollDirection: Axis.vertical,
           addAutomaticKeepAlives: false,
           children: [
             Row(
@@ -208,7 +207,7 @@ class MyApp extends StatelessWidget {
                   alignment: Alignment.center,
                 )
               ],
-            ),
+            )
           ]),
       floatingActionButton: FloatingActionButton(
           child: Icon(Icons.add),
@@ -232,170 +231,5 @@ class MyApp extends StatelessWidget {
             }),
       ),
     ));
-  }
-}
-
-class WidgetBoi extends StatefulWidget {
-  const WidgetBoi({Key? key}) : super(key: key);
-
-  @override
-  State<WidgetBoi> createState() => _WidgetBoiState();
-}
-
-class _WidgetBoiState extends State<WidgetBoi> {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      color: randomColor(),
-      width: 500,
-      height: 500,
-    );
-
-    /*ListView(
-      scrollDirection: Axis.vertical,
-      addAutomaticKeepAlives: false,
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Expanded(
-              flex: 4,
-              child: Container(
-                child: const Text('Hi Mom!'),
-                margin: const EdgeInsets.all(10),
-                padding: const EdgeInsets.all(10),
-                color: Colors.amberAccent,
-                height: 100,
-                width: 100,
-              ),
-            ),
-            Expanded(
-              flex: 2,
-              child: Container(
-                child: const Text('Hi Mom!'),
-                margin: const EdgeInsets.all(10),
-                padding: const EdgeInsets.all(10),
-                color: Colors.amberAccent,
-                height: 100,
-                width: 100,
-              ),
-            ),
-          ],
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Expanded(
-              flex: 4,
-              child: Container(
-                child: const Text('Hi Mom!'),
-                margin: const EdgeInsets.all(10),
-                padding: const EdgeInsets.all(10),
-                color: Colors.amberAccent,
-                height: 100,
-                width: 100,
-              ),
-            ),
-            Expanded(
-              flex: 2,
-              child: Container(
-                child: const Text('Hi Mom!'),
-                margin: const EdgeInsets.all(10),
-                padding: const EdgeInsets.all(10),
-                color: Colors.amberAccent,
-                height: 100,
-                width: 100,
-              ),
-            ),
-          ],
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Expanded(
-              flex: 4,
-              child: Container(
-                child: const Text('Hi Mom!'),
-                margin: const EdgeInsets.all(10),
-                padding: const EdgeInsets.all(10),
-                color: Colors.amberAccent,
-                height: 100,
-                width: 100,
-              ),
-            ),
-            Expanded(
-              flex: 2,
-              child: Container(
-                child: const Text('Hi Mom!'),
-                margin: const EdgeInsets.all(10),
-                padding: const EdgeInsets.all(10),
-                color: Colors.amberAccent,
-                height: 100,
-                width: 100,
-              ),
-            ),
-          ],
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Expanded(
-              flex: 4,
-              child: Container(
-                child: const Text('Hi Mom!'),
-                margin: const EdgeInsets.all(10),
-                padding: const EdgeInsets.all(10),
-                color: Colors.amberAccent,
-                height: 100,
-                width: 100,
-              ),
-            ),
-            Expanded(
-              flex: 2,
-              child: Container(
-                child: const Text('Hi Mom!'),
-                margin: const EdgeInsets.all(10),
-                padding: const EdgeInsets.all(10),
-                color: Colors.amberAccent,
-                height: 100,
-                width: 100,
-              ),
-            ),
-          ],
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Expanded(
-              flex: 4,
-              child: Container(
-                child: const Text('Hi Mom!'),
-                margin: const EdgeInsets.all(10),
-                padding: const EdgeInsets.all(10),
-                color: Colors.amberAccent,
-                height: 100,
-                width: 100,
-              ),
-            ),
-            Expanded(
-              flex: 2,
-              child: Container(
-                child: const Text('Hi Mom!'),
-                margin: const EdgeInsets.all(10),
-                padding: const EdgeInsets.all(10),
-                color: Colors.amberAccent,
-                height: 100,
-                width: 100,
-              ),
-            ),
-          ],
-        ),
-      ],
-    );*/
   }
 }
