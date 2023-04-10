@@ -35,26 +35,37 @@ class HomePageList extends StatelessWidget {
       itemCount: (items.length).toInt(),
       itemBuilder: (context, index) {
         return Container(
-          color: Colors.white,
-          height: 60,
+          padding: EdgeInsets.all(30),
+          color: Colors.black,
           child: Center(
               child: Text(
             (index * 2 + 1).toString(),
-            style: TextStyle(color: Colors.black),
+            style: TextStyle(color: Colors.white),
           )),
         );
       },
       separatorBuilder: (BuildContext context, int index) {
         return Container(
-          color: Colors.black,
-          height: 60,
-          child: Center(
+            padding: EdgeInsets.all(30),
+            color: Colors.white,
+            child: Column(
+              children: [
+                Text("a"),
+                Text("a"),
+                Text("a"),
+                Text("a"),
+                Text("a"),
+                Text("a"),
+                Text("a"),
+              ],
+            )
+            /*child: Center(
             child: Text(
-              (index * 2 + 2).toString(),
+              (index * 2 + 2).toString() + "a\n\n\n\n\n\n\a\n\n\n\a",
               style: TextStyle(color: Colors.white),
             ),
-          ),
-        );
+          ),*/
+            );
       },
     );
   }
