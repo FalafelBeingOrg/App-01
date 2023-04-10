@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
                   style: TextStyle(color: Colors.white)),
             ),
             body: HomePageList(
-              items: List<String>.generate(10000, (i) => 'Item $i'),
+              items: List<String>.generate(50, (i) => 'Item $i'),
             )));
   }
 }
@@ -31,25 +31,29 @@ class HomePageList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: (items.length / 2).toInt(),
-      prototypeItem: ListTile(
-        title: Text(items.first),
-      ),
-      scrollDirection: Axis.vertical,
-      addAutomaticKeepAlives: false,
+    return ListView.separated(
+      itemCount: (items.length).toInt(),
       itemBuilder: (context, index) {
-        return Stack(
-          children: [
-            Container(
-              color: Colors.amber,
-              height: 50,
+        return Container(
+          color: Colors.white,
+          height: 60,
+          child: Center(
+              child: Text(
+            (index * 2 + 1).toString(),
+            style: TextStyle(color: Colors.black),
+          )),
+        );
+      },
+      separatorBuilder: (BuildContext context, int index) {
+        return Container(
+          color: Colors.black,
+          height: 60,
+          child: Center(
+            child: Text(
+              (index * 2 + 2).toString(),
+              style: TextStyle(color: Colors.white),
             ),
-            Container(
-              color: Colors.black,
-              height: 100,
-            ),
-          ],
+          ),
         );
       },
     );
