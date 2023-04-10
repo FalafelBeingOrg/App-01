@@ -1,8 +1,6 @@
 import 'dart:html';
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
 
 void main() {
   runApp(MyApp());
@@ -41,27 +39,46 @@ class HomePageList extends StatelessWidget {
       scrollDirection: Axis.vertical,
       addAutomaticKeepAlives: false,
       itemBuilder: (context, index) {
-        return Column(
+        return Stack(
           children: [
-            Expanded(
-                child: Container(
+            Container(
+              color: Colors.amber,
+              height: 50,
+            ),
+            Container(
               color: Colors.black,
               height: 100,
-              child: Center(
-                child: Text(items[index * 2],
-                    style: TextStyle(color: Colors.white)),
-              ),
-            )),
-            Expanded(
-                child: Container(
-              height: 100,
-              child: Center(
-                child: Text(items[index * 2 + 1]),
-              ),
-            ))
+            ),
           ],
         );
       },
     );
+  }
+}
+
+class Post extends StatelessWidget {
+  final List<String> items;
+  final int index;
+  const Post({super.key, required this.items, required this.index});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+        child: Stack(children: [
+      Container(
+        color: Colors.black,
+        height: 200,
+        child: Center(
+          child: Text(items[index * 2], style: TextStyle(color: Colors.white)),
+        ),
+      ),
+      Container(
+        color: Colors.black,
+        height: 100,
+        child: Center(
+          child: Text(items[index * 2], style: TextStyle(color: Colors.white)),
+        ),
+      ),
+    ]));
   }
 }

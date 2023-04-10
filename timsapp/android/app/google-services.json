@@ -29,6 +29,13 @@
             {
               "client_id": "842025849971-ra5nqg5me86d3n1al1tsuuusiijm79ll.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "842025849971-2u3cnb6fh7qu30uket0oj47j8lkcmjpj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.timsapp"
+              }
             }
           ]
         }
